@@ -11,7 +11,7 @@ import java.util.List;
 public class FeedDao {
 
     public String getAllFeeds(String token) {
-        Base.open("org.postgresql.Driver", "jdbc:postgresql://ec2-79-125-2-69.eu-west-1.compute.amazonaws.com:5432/daraubdcs0bdl0?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory", "jrvhxomssbksdv",  "d964711045873dd954a82074cbddaeaa8bdaac4a44a01e4946398a489d70c763");
+        Base.open("org.postgresql.Driver", "jdbc:postgresql://ec2-54-75-235-2.eu-west-1.compute.amazonaws.com:5432/de1pf520uoh97?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory", "nxhigkkgenuvdx",  "ccbcd00eacce253153d7c2bef421e065072541d4168d562035ae5a99fd9dcd41");
         try {
             User user = User.findFirst("token = ?", token);
             String feeds = Feed.where("user_id = ?", user.get("id")).toJson(true);
@@ -26,7 +26,8 @@ public class FeedDao {
     }
 
     public String getArticles(String feed_id) {
-        Base.open("org.postgresql.Driver", "jdbc:postgresql://ec2-79-125-2-69.eu-west-1.compute.amazonaws.com:5432/daraubdcs0bdl0?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory", "jrvhxomssbksdv",  "d964711045873dd954a82074cbddaeaa8bdaac4a44a01e4946398a489d70c763");
+        Base.open("org.postgresql.Driver", "jdbc:postgresql://ec2-54-75-235-2.eu-west-1.compute.amazonaws.com:5432/de1pf520uoh97?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory", "nxhigkkgenuvdx",  "ccbcd00eacce253153d7c2bef421e065072541d4168d562035ae5a99fd9dcd41");
+
         try {
             String articles = Article.where("feed_id = ?", Integer.parseInt(feed_id)).toJson(true);
             Base.close();

@@ -2,9 +2,9 @@ import Feed.FeedController;
 import Feed.FeedService;
 import User.UserController;
 import User.UserService;
-import org.eclipse.jetty.util.log.Log;
 
 import static spark.Spark.*;
+
 public class Main {
 
     public static void main(String[] args) {
